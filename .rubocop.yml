@@ -1,0 +1,38 @@
+# See https://docs.rubocop.org/rubocop/configuration
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bundle/**/*
+
+Layout/LineLength:
+  Exclude:
+    - 'spec/models/ingredient_spec.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'db/seeds.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*.rb'
+
+Rails/FilePath:
+  Enabled: false
+
+RSpec/LetSetup:
+  Exclude:
+    - 'spec/integration/**/*_spec.rb'
+
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - 'spec/integration/**/*_spec.rb'
+
+Style/Documentation:
+  Enabled: false
