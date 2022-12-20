@@ -21,6 +21,9 @@ group :development, :test do
   gem 'rubocop-rspec', '~> 2.11'
   gem 'shoulda-matchers', '~> 5.1'
   gem 'simplecov', '~> 0.21.2'
+  gem 'factory_bot_rails', '~>  6.2.0'
+  gem 'faker', '~> 3.0.0'
+  gem 'pry-rails', '~> 0.3.9'
 end
 
 group :development do
