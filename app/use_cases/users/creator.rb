@@ -2,12 +2,14 @@
 
 module Users
   class Creator
-    def perform(name:, email:, password:)
+    def perform(user_params)
       User.create!(
-        name:,
-        email:,
-        password:
+        name: user_params[:name],
+        email: user_params[:email].downcase,
+        password: user_params[:password]
       )
+    rescue ActiveRecord::RecordInvalid => e
+      raise MissingParameterError, e
     end
   end
 end
